@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6월 제주 일정표</title>
+    <style>
+        :root { --primary: #1A3C40; --secondary: #417D7A; --accent: #D06224; --bg: #F3F7EC; }
+        body { font-family: 'Pretendard', sans-serif; background: var(--bg); color: #333; line-height: 1.6; margin: 0; padding: 15px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        header { text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 25px; }
+        .grid-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .card { background: #F8F9FA; border-radius: 10px; padding: 15px; border: 1px solid #E9ECEF; }
+        .card h3 { color: var(--primary); margin: 0 0 10px 0; font-size: 1.1rem; border-bottom: 1px solid #DEE2E6; padding-bottom: 5px; }
+        .day-item { margin-bottom: 20px; border-left: 4px solid var(--secondary); padding-left: 15px; }
+        .day-title { font-weight: bold; color: var(--primary); font-size: 1.05rem; }
+        .highlight-box { background: #FFF4E5; border: 1px solid #FFD8A8; padding: 15px; border-radius: 10px; margin-top: 10px; }
+        .activity { font-size: 0.9rem; margin-top: 5px; color: #444; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header><h1>🏔️ 제주 한라산 & 힐링 투어</h1><p>2026.06.26 - 06.30</p></header>
+    <div class="grid-box">
+        <div class="card"><h3>✈️ Flight</h3><p>출발: 06/26 14:00 (7C155)<br>복귀: 06/30 15:30 (OZ8956)</p></div>
+        <div class="card"><h3>🏠 Stay</h3><p>블라제: 표선면 녹산로 274 G<br>산돌바당: 대정읍 상모이교로 23-5</p></div>
+    </div>
+    <div class="day-item"><div class="day-title">06/26(금) 제주 도착</div><p class="activity">블라제 리조트 체크인 후 등반 준비 및 휴식</p></div>
+    <div class="day-item"><div class="day-title" style="color:#D06224">06/27(토) 한라산 성판악</div><div class="highlight-box">06:00 성판악 코스 등정 (왕복 19.2km / 약 9시간)</div></div>
+    <div class="day-item"><div class="day-title">06/28(일) 숙소 이동 & 낚시</div><p class="activity">대정 산돌바당 이동 후 18:00 야간 한치 선상 낚시</p></div>
+    <div class="day-item"><div class="day-title">06/29(월) 프리다이빙</div><p class="activity">모슬포/산방산 인근 다이빙 연습 및 해안 힐링</p></div>
+    <div class="day-item"><div class="day-title">06/30(화) 복귀</div><p class="activity">15:30 제주공항 출발 → 김포 복귀</p></div>
+</div>
+</body>
+</html>
