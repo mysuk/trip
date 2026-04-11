@@ -24,11 +24,18 @@
         .day-title { font-weight: bold; color: var(--primary); font-size: 1.2rem; }
         .highlight-box { background: #FFF3E0; border: 2px solid #FFE0B2; padding: 20px; border-radius: 12px; margin-top: 15px; }
         .highlight-title { color: var(--accent); font-weight: 800; font-size: 1.2rem; display: block; margin-bottom: 10px; }
+        
+        .prep-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; background: #fff; padding: 15px; border-radius: 10px; border: 1px inset #eee; }
+        .prep-item { font-size: 0.9rem; display: flex; align-items: center; }
+        .prep-item::before { content: '✅'; margin-right: 8px; }
+
         .lunch-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
         .option-card { background: #E8F5E9; border-radius: 8px; padding: 12px; font-size: 0.85rem; border: 1px solid #C8E6C9; text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
         .option-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-color: #2E7D32; }
         .option-card strong { color: #2E7D32; display: block; margin-bottom: 5px; font-size: 1rem; }
-        .map-link { font-size: 0.75rem; color: #666; text-decoration: underline; margin-top: 5px; display: block; }
+        .map-link { font-size: 0.75rem; color: #19CE60; font-weight: bold; text-decoration: none; margin-top: 5px; display: block; }
+        .map-link::before { content: '📍 '; }
+        
         .food-tag { display: inline-block; background: #E8F5E9; color: #2E7D32; padding: 2px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-top: 10px; }
         .activity { font-size: 1rem; margin-top: 8px; color: #555; }
         footer { text-align: center; font-size: 0.9rem; color: #78909C; margin-top: 50px; border-top: 1px solid #EEE; padding-top: 20px; }
@@ -50,74 +57,79 @@
         </div>
         <div class="card">
             <h3>🏠 베이스캠프</h3>
-            <p>⛺ <b>1~2박:</b> <a href="https://maps.google.com/?cid=13243810848734421421&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="basecamp-link">블라제 리조트 (표선)</a></p>
-            <p>⛺ <b>3~4박:</b> <a href="https://maps.google.com/?cid=13994947526366408521&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="basecamp-link">산돌바당 (대정)</a></p>
+            <p>⛺ <b>1~2박:</b> <a href="https://map.naver.com/p/search/블라제리조트" target="_blank" class="basecamp-link">블라제 리조트 (표선)</a></p>
+            <p>⛺ <b>3~4박:</b> <a href="https://map.naver.com/p/search/산돌바당" target="_blank" class="basecamp-link">산돌바당 (대정)</a></p>
         </div>
     </div>
 
     <div class="day-item">
         <div class="day-title">06월 26일 (금) : 제주 입성 & 메뉴 선택!</div>
         <p class="activity">15:10 제주공항 도착 → 렌터카 인수 → <b>리조트 이동 중 점심 식사</b></p>
-        <p style="font-size: 0.85rem; color: #e67e22; margin-top: 5px;">* 식당이나 숙소 이름을 클릭하면 지도로 연결됩니다.</p>
         
         <div class="lunch-options">
-            <a href="https://www.google.com/maps/search/?api=1&query=상춘재" target="_blank" class="option-card">
+            <a href="https://map.naver.com/p/search/상춘재" target="_blank" class="option-card">
                 <strong>🍚 상춘재</strong>
-                청와대 셰프의 정갈한 비빔밥.<br>문어/성게 등 제주의 맛.
-                <span class="map-link">지도 보기</span>
+                청와대 셰프의 비빔밥 맛집.
+                <span class="map-link">네이버 지도</span>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=김희선제주몸국" target="_blank" class="option-card">
+            <a href="https://map.naver.com/p/search/김희선제주몸국" target="_blank" class="option-card">
                 <strong>🥣 김희선 몸국</strong>
-                칼칼하고 시원한 향토 몸국.<br>가성비와 로컬 감성 최고.
-                <span class="map-link">지도 보기</span>
+                칼칼한 제주 향토 몸국.
+                <span class="map-link">네이버 지도</span>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=도도리고기국수" target="_blank" class="option-card">
+            <a href="https://map.naver.com/p/search/도도리고기국수" target="_blank" class="option-card">
                 <strong>🍜 도도리 고기국수</strong>
-                공항 근처 고기국수 맛집.<br>깔끔한 시설과 돔베고기 수육.
-                <span class="map-link">지도 보기</span>
+                공항 근처 깔끔한 국수집.
+                <span class="map-link">네이버 지도</span>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=교래향" target="_blank" class="option-card">
+            <a href="https://map.naver.com/p/search/교래향" target="_blank" class="option-card">
                 <strong>🥘 교래향</strong>
-                리조트 인근 갈치조림 전문.<br>등반 전 든든한 한식 한 상.
-                <span class="map-link">지도 보기</span>
+                숙소 인근 든든한 갈치조림.
+                <span class="map-link">네이버 지도</span>
             </a>
         </div>
-        <span class="food-tag">#원하는_메뉴_골라봐 #첫식사가_중요</span>
     </div>
 
     <div class="day-item">
         <div class="day-title" style="color: var(--accent);">06월 27일 (토) : 메인 이벤트</div>
         <div class="highlight-box">
             <span class="highlight-title">🎯 한라산 성판악 코스 등정</span>
-            <p class="activity"><b>06:00 집결:</b> 백록담을 향한 19.2km 도전</p>
-            <p class="activity"><b>하산 후:</b> 흑돼지 구이와 소맥으로 등정 기념 뒤풀이!</p>
-            <span class="food-tag">#백록담성공기원 #단백질파티</span>
+            <p class="activity"><b>06:00 집결:</b> 백록담 왕복 도전</p>
+            
+            <div class="prep-list">
+                <div class="prep-item">신분증 (필수!)</div>
+                <div class="prep-item">예약 QR 코드</div>
+                <div class="prep-item">등산화 & 등산스틱</div>
+                <div class="prep-item">충분한 물 (1인 2병+)</div>
+                <div class="prep-item">행동식 (초코바, 열량)</div>
+                <div class="prep-item">정상 점심 (김밥/컵라면)</div>
+                <div class="prep-item">바람막이 (정상 쌀쌀)</div>
+                <div class="prep-item">보조배터리</div>
+            </div>
+
+            <p class="activity" style="margin-top:15px;"><b>하산 후:</b> 흑돼지 구이와 소맥 뒤풀이!</p>
         </div>
     </div>
 
     <div class="day-item">
         <div class="day-title">06월 28일 (일) : 힐링 & 이동</div>
-        <p class="activity">체크아웃 후 <b>산돌바당</b>으로 이동 (동-서 드라이브)</p>
-        <p class="activity">오후: 대정읍 해안가 카페 투어 및 자유 시간</p>
+        <p class="activity">서남쪽 이동 및 대정읍 해안가 카페 투어</p>
         <span class="food-tag">#고등어회 #해안도로드라이브</span>
     </div>
 
     <div class="day-item">
         <div class="day-title">06월 29일 (월) : 바다 활동</div>
-        <p class="activity"><b>주간:</b> 모슬포 인근 프리다이빙 및 수영</p>
-        <p class="activity"><b>야간:</b> 마지막 밤을 장식할 맛있는 저녁 식사</p>
+        <p class="activity"><b>주간:</b> 프리다이빙 및 수영</p>
         <span class="food-tag">#해산물파티 #제주딱새우</span>
     </div>
 
     <div class="day-item">
         <div class="day-title">06월 30일 (화) : 마무리</div>
-        <p class="activity">느긋한 아침 식사 후 짐 정리 및 공항 이동</p>
         <p class="activity">15:30 제주공항 출발 → 김포 복귀</p>
     </div>
 
     <footer>
-        <p>※ 한라산 탐방 예약은 한 달 전 9시에 다 같이 광클!</p>
-        <p>※ 낚시는 현지 기분 따라 결정 (에깅대 챙길까?)</p>
+        <p>※ 한라산 탐방 예약은 한 달 전 9시 광클!</p>
     </footer>
 </div>
 
