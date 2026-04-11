@@ -20,19 +20,25 @@
         .card h3 { color: var(--secondary); margin: 0 0 10px 0; font-size: 1.1rem; border-bottom: 1px solid #BDBDBD; padding-bottom: 5px; }
         .basecamp-link { color: #2C3E50; text-decoration: none; font-weight: bold; border-bottom: 1px dashed #7f8c8d; }
         .basecamp-link:hover { color: var(--secondary); border-bottom-style: solid; }
-        .day-item { margin-bottom: 30px; border-left: 5px solid var(--secondary); padding-left: 20px; }
+        .day-item { margin-bottom: 35px; border-left: 5px solid var(--secondary); padding-left: 20px; }
         .day-title { font-weight: bold; color: var(--primary); font-size: 1.2rem; }
         .highlight-box { background: #FFF3E0; border: 2px solid #FFE0B2; padding: 20px; border-radius: 12px; margin-top: 15px; }
         .highlight-title { color: var(--accent); font-weight: 800; font-size: 1.2rem; display: block; margin-bottom: 10px; }
         
-        .prep-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; background: #fff; padding: 15px; border-radius: 10px; border: 1px inset #eee; }
-        .prep-item { font-size: 0.9rem; display: flex; align-items: center; }
+        .prep-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; background: #fff; padding: 12px; border-radius: 10px; border: 1px inset #eee; }
+        .prep-item { font-size: 0.85rem; display: flex; align-items: center; color: #444; }
         .prep-item::before { content: '✅'; margin-right: 8px; }
 
-        .lunch-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .lunch-options, .dinner-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
         .option-card { background: #E8F5E9; border-radius: 8px; padding: 12px; font-size: 0.85rem; border: 1px solid #C8E6C9; text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
         .option-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-color: #2E7D32; }
         .option-card strong { color: #2E7D32; display: block; margin-bottom: 5px; font-size: 1rem; }
+        
+        /* 저녁 후보 전용 스타일 */
+        .dinner-card { background: #F3E5F5; border-color: #E1BEE7; }
+        .dinner-card strong { color: #7B1FA2; }
+        .rating { font-size: 0.8rem; color: #E67E22; font-weight: bold; margin-bottom: 4px; display: block; }
+        
         .map-link { font-size: 0.75rem; color: #19CE60; font-weight: bold; text-decoration: none; margin-top: 5px; display: block; }
         .map-link::before { content: '📍 '; }
         
@@ -45,7 +51,7 @@
 
 <div class="container">
     <header>
-        <h1>🏔️ 친구들과 함께하는 제주 한라산 & 미식 여행</h1>
+        <h1>🏔️ 제주 한라산 & 미식 여행 (With Friends)</h1>
         <p>2026.06.26(금) - 06.30(화) | 4박 5일</p>
     </header>
 
@@ -63,73 +69,81 @@
     </div>
 
     <div class="day-item">
-        <div class="day-title">06월 26일 (금) : 제주 입성 & 메뉴 선택!</div>
-        <p class="activity">15:10 제주공항 도착 → 렌터카 인수 → <b>리조트 이동 중 점심 식사</b></p>
-        
+        <div class="day-title">06월 26일 (금) : 제주 입성 & 점심 선택</div>
+        <p class="activity">15:10 제주공항 도착 → 렌터카 인수 → 이동 중 식사</p>
         <div class="lunch-options">
             <a href="https://map.naver.com/p/search/2010제주상춘재" target="_blank" class="option-card">
-                <strong>🍚 2010제주상춘재 (선흘)</strong>
-                청와대 셰프의 손맛, 조천읍 선흘리 위치.<br>자연 속에서 즐기는 정갈한 비빔밥.
+                <strong>🍚 2010제주상춘재</strong>
+                조천 선흘 위치. 정갈한 비빔밥 명소.
                 <span class="map-link">네이버 지도</span>
             </a>
             <a href="https://map.naver.com/p/search/김희선제주몸국" target="_blank" class="option-card">
                 <strong>🥣 김희선 몸국</strong>
-                칼칼하고 시원한 제주 향토 몸국.
-                <span class="map-link">네이버 지도</span>
-            </a>
-            <a href="https://map.naver.com/p/search/도도리고기국수" target="_blank" class="option-card">
-                <strong>🍜 도도리 고기국수</strong>
-                공항 인근 깔끔하고 담백한 고기국수.
-                <span class="map-link">네이버 지도</span>
-            </a>
-            <a href="https://map.naver.com/p/search/교래향" target="_blank" class="option-card">
-                <strong>🥘 교래향</strong>
-                숙소 인근의 푸짐한 갈치조림 전문점.
+                공항 근처 칼칼하고 시원한 몸국.
                 <span class="map-link">네이버 지도</span>
             </a>
         </div>
     </div>
 
     <div class="day-item">
-        <div class="day-title" style="color: var(--accent);">06월 27일 (토) : 메인 이벤트</div>
+        <div class="day-title" style="color: var(--accent);">06월 27일 (토) : 한라산 등반 & 흑돼지 뒤풀이</div>
         <div class="highlight-box">
-            <span class="highlight-title">🎯 한라산 성판악 코스 등정</span>
-            <p class="activity"><b>06:00 집결:</b> 백록담 왕복 도전 (약 9시간)</p>
-            
+            <span class="highlight-title">🎯 성판악 코스 등산 준비물</span>
             <div class="prep-list">
-                <div class="prep-item">신분증 (입장 필수)</div>
-                <div class="prep-item">예약 QR 코드</div>
+                <div class="prep-item">신분증 & 예약 QR코드</div>
                 <div class="prep-item">등산화 & 등산스틱</div>
-                <div class="prep-item">물 & 행동식</div>
-                <div class="prep-item">정상 점심 (김밥/컵라면)</div>
                 <div class="prep-item">바람막이 (필수)</div>
-                <div class="prep-item">보조배터리</div>
-                <div class="prep-item">무릎보호대 (권장)</div>
+                <div class="prep-item">보조배터리 (필수)</div>
+                <div class="prep-item">충분한 물 (1인 2병+)</div>
+                <div class="prep-item">정상 도시락 (김밥 등)</div>
+                <div class="prep-item">에너지바 & 행동식</div>
+                <div class="prep-item">무릎보호대 & 장갑</div>
             </div>
 
-            <p class="activity" style="margin-top:15px;"><b>하산 후:</b> 흑돼지 구이와 시원한 뒤풀이!</p>
+            <p class="activity" style="margin-top:20px; font-weight: bold; color: #7B1FA2;">🔥 하산 후 흑돼지 후보 (표선 TOP 4)</p>
+            <div class="dinner-options">
+                <a href="https://map.naver.com/p/search/교래흑돼지표선점" target="_blank" class="option-card dinner-card">
+                    <span class="rating">⭐️ 4.5 (평점 최고)</span>
+                    <strong>🍖 교래흑돼지 표선점</strong>
+                    고기 질과 밑반찬 만족도가 매우 높음.
+                    <span class="map-link">네이버 지도</span>
+                </a>
+                <a href="https://map.naver.com/p/search/흑돼지제주정" target="_blank" class="option-card dinner-card">
+                    <span class="rating">⭐️ 4.3 (리뷰 최다)</span>
+                    <strong>🌿 흑돼지제주정</strong>
+                    고사리/콩나물과 함께 굽는 솥뚜껑 구이.
+                    <span class="map-link">네이버 지도</span>
+                </a>
+                <a href="https://map.naver.com/p/search/제주흑돈세상수라간표선점" target="_blank" class="option-card dinner-card">
+                    <span class="rating">⭐️ 4.3 (도민 추천)</span>
+                    <strong>🥩 흑돈세상수라간</strong>
+                    다양한 부위의 신선한 생고기 전문점.
+                    <span class="map-link">네이버 지도</span>
+                </a>
+                <a href="https://map.naver.com/p/search/표선흑도니" target="_blank" class="option-card dinner-card">
+                    <span class="rating">⭐️ 4.2 (가까운 곳)</span>
+                    <strong>🐷 흑도니</strong>
+                    리조트 인근 접근성 좋고 친절한 곳.
+                    <span class="map-link">네이버 지도</span>
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="day-item">
         <div class="day-title">06월 28일 (일) : 힐링 & 이동</div>
-        <p class="activity">서남쪽 대정읍 이동 및 해안도로 드라이브</p>
-        <span class="food-tag">#고등어회 #대정읍카페투어</span>
+        <p class="activity">체크아웃 후 대정읍 이동 및 카페 투어</p>
+        <span class="food-tag">#고등어회 #해안도로드라이브</span>
     </div>
 
     <div class="day-item">
         <div class="day-title">06월 29일 (월) : 바다 활동</div>
-        <p class="activity"><b>주간:</b> 프리다이빙 및 수영 (모슬포 인근)</p>
-        <span class="food-tag">#해산물파티 #제주마지막밤</span>
-    </div>
-
-    <div class="day-item">
-        <div class="day-title">06월 30일 (화) : 마무리</div>
-        <p class="activity">15:30 제주공항 출발 → 김포 복귀</p>
+        <p class="activity"><b>주간:</b> 프리다이빙 및 수영 (모슬포)</p>
+        <span class="food-tag">#해산물파티 #마지막밤</span>
     </div>
 
     <footer>
-        <p>※ 한라산 탐방 예약은 한 달 전 9시 정각에 진행해 주세요!</p>
+        <p>※ 한라산 탐방 예약은 한 달 전 9시 정각 광클 필수!</p>
     </footer>
 </div>
 
