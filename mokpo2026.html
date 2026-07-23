@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목포 2박 3일 낭만 여행 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #fdfbf7;
+            color: #332d2d;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        .tab-active {
+            border-bottom: 3px solid #e67e22;
+            color: #e67e22;
+            font-weight: 700;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="p-0 m-0 border-t-8 border-[#e67e22]">
+
+    <header class="bg-white py-12 px-6 text-center custom-shadow">
+        <h1 class="text-3xl md:text-4xl font-bold text-[#2c3e50] mb-4">🌊 목포 낭만 여행 가이드</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            2024년 8월 14일부터 16일까지, 서울을 떠나 목포의 바다와 근대 역사를 만나는 2박 3일 여정입니다. 
+            KTX 시간표부터 숙소 정보, 일자별 미식 코스까지 한곳에서 확인하세요.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- Section: 핵심 물류 정보 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-2xl custom-shadow border border-gray-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-2">🚄</span>
+                    <h2 class="text-xl font-bold">KTX 예매 정보</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-3 bg-blue-50 rounded-lg">
+                        <p class="text-xs text-blue-600 font-bold uppercase">가는 편 (8/14)</p>
+                        <p class="text-sm font-medium">서울(12:08) → 목포(14:50)</p>
+                        <p class="text-xs text-gray-500">좌석: 15호차 10A, 10B</p>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <p class="text-xs text-orange-600 font-bold uppercase">오는 편 (8/16)</p>
+                        <p class="text-sm font-medium">목포(14:19) → 서울(17:10)</p>
+                        <p class="text-xs text-gray-500">좌석: 1호차 8C, 8D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl custom-shadow border border-gray-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-2">🏨</span>
+                    <h2 class="text-xl font-bold">숙소 정보</h2>
+                </div>
+                <div class="h-full">
+                    <h3 class="text-lg font-semibold text-[#2c3e50]">목포 오션 호텔</h3>
+                    <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                        목포역에서 도보 이동이 가능한 최적의 위치입니다. 구도심 관광과 맛집 탐방에 매우 유리하며, 
+                        첫날과 마지막 날 짐 보관 서비스를 활용하여 가벼운 여행을 즐기세요.
+                    </p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-xs rounded-full">#역세권</span>
+                        <span class="px-3 py-1 bg-gray-100 text-xs rounded-full">#짐보관가능</span>
+                        <span class="px-3 py-1 bg-gray-100 text-xs rounded-full">#구도심중심</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: 인터랙티브 타임라인 -->
+        <section class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-[#2c3e50]">📅 일자별 상세 일정</h2>
+                <p class="text-sm text-gray-500 mt-2">탭을 클릭하여 해당 일자의 코스를 확인하세요.</p>
+            </div>
+
+            <div class="flex justify-center mb-8 space-x-8 border-b border-gray-200">
+                <button onclick="showDay(1)" id="tab1" class="tab-btn pb-2 px-4 tab-active transition-all">1일차 (8/14)</button>
+                <button onclick="showDay(2)" id="tab2" class="tab-btn pb-2 px-4 text-gray-400 hover:text-gray-600 transition-all">2일차 (8/15)</button>
+                <button onclick="showDay(3)" id="tab3" class="tab-btn pb-2 px-4 text-gray-400 hover:text-gray-600 transition-all">3일차 (8/16)</button>
+            </div>
+
+            <div id="timeline-container" class="relative pl-12 timeline-line min-h-[400px]">
+                <!-- 타임라인 아이템들이 JS에 의해 여기에 동적으로 삽입됩니다 -->
+            </div>
+        </section>
+
+        <!-- Section: 활동 분석 -->
+        <section class="bg-white p-8 rounded-3xl custom-shadow border border-gray-100 mb-12">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-[#2c3e50] mb-4">📊 이번 여행의 균형</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        이 일정표는 목포의 9미(味)를 맛보는 **식도락**과 근대 문화의 숨결을 느끼는 **인문 관광**이 적절히 조화를 이루고 있습니다. 
+                        특히 오후 시간대는 여유로운 산책과 야경 감상에 집중하여 낭만적인 분위기를 극대화했습니다.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-[#e67e22] rounded-full mr-2"></span> <strong>식도락:</strong> 낙지탕탕이, 민어회, 게살비빔밥 등</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-[#3498db] rounded-full mr-2"></span> <strong>관광:</strong> 케이블카, 역사관, 시화골목</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-[#95a5a6] rounded-full mr-2"></span> <strong>휴식:</strong> 호텔 체크인, 카페 타임, 야경 산책</li>
+                    </ul>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: 여행 팁 -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-[#fdf2e9] p-6 rounded-xl">
+                <span class="text-2xl">💡</span>
+                <h4 class="font-bold mt-2">짐 관리 팁</h4>
+                <p class="text-sm text-gray-600 mt-2">호텔이 역과 가까우니 도착 직후와 체크아웃 후 짐을 맡겨 이동 효율을 높이세요.</p>
+            </div>
+            <div class="bg-[#eaf4fb] p-6 rounded-xl">
+                <span class="text-2xl">🥖</span>
+                <h4 class="font-bold mt-2">기념품 구매</h4>
+                <p class="text-sm text-gray-600 mt-2">코롬방/씨엘비 베이커리의 바게트는 인기가 많으니 마지막 날 오전에 방문하세요.</p>
+            </div>
+            <div class="bg-[#f4f4f4] p-6 rounded-xl">
+                <span class="text-2xl">🕰️</span>
+                <h4 class="font-bold mt-2">시간 엄수</h4>
+                <p class="text-sm text-gray-600 mt-2">마지막 날 KTX는 14:19입니다. 최소 30분 전에는 역에 도착하도록 식사 시간을 조절하세요.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2c3e50] text-white py-10 mt-12 text-center">
+        <p class="text-sm opacity-80">© 2024 목포 낭만 여행 가이드 | 본 일정은 8월 중순 날씨를 고려하여 제작되었습니다.</p>
+    </footer>
+
+    <script>
+        const itineraryData = {
+            1: [
+                { time: "14:50", activity: "목포역 도착", desc: "KTX 15호차 10A, 10B 하차 후 도보 이동" },
+                { time: "15:10", activity: "호텔 체크인 & 짐 보관", desc: "목포 오션 호텔 - 신속한 체크인 후 가벼운 복장으로 이동" },
+                { time: "15:40", activity: "늦은 점심 또는 요기", desc: "쫄복탕 또는 근처 카페 에그타르트 추천" },
+                { time: "17:00", activity: "해상 케이블카 탑승", desc: "북항 스테이션 → 고하도 스테이션 (다도해 조망)" },
+                { time: "18:30", activity: "고하도 해상 데크", desc: "바다 위 산책로와 전망대 산책" },
+                { time: "20:00", activity: "저녁 식사 (낙지)", desc: "낙지탕탕이 또는 낙지 호롱구이로 목포의 맛 시작" },
+                { time: "21:30", activity: "바다 분수 & 야경", desc: "평화광장 춤추는 바다 분수 감상 (선택 사항)" }
+            ],
+            2: [
+                { time: "10:00", activity: "남도식 백반 아침", desc: "푸짐한 반찬으로 든든하게 하루 시작" },
+                { time: "11:30", activity: "근대 역사관 탐방", desc: "1관(호텔 델루나 촬영지) & 2관 관람" },
+                { time: "13:30", activity: "점심 식사 (민어/게살)", desc: "민어회 또는 게살 비빔밥 맛집 탐방" },
+                { time: "15:00", activity: "시화 골목 산책", desc: "서산동 벽화 마을, 연희네 슈퍼 기념 사진" },
+                { time: "16:30", activity: "카페 휴식", desc: "구도심 레트로 카페에서 시원한 음료 타임" },
+                { time: "18:00", activity: "유달산 & 노적봉", desc: "해 질 녘 선선한 산책과 시내 전경 감상" },
+                { time: "19:30", activity: "대반동 야경 식사", desc: "목포 대교 야경을 보며 즐기는 저녁 식사" }
+            ],
+            3: [
+                { time: "10:00", activity: "체크아웃 & 식사", desc: "짐 보관 후 뼈해장국 또는 쑥꿀레 디저트" },
+                { time: "11:00", activity: "명물 빵 쇼핑", desc: "코롬방/씨엘비 베이커리 새우/크림치즈 바게트 구입" },
+                { time: "11:40", activity: "수산 시장 구경", desc: "건어물 거리에서 선물용 특산물 쇼핑" },
+                { time: "12:40", activity: "마지막 만찬", desc: "떡갈비 등 역 근처에서 여유로운 점심 식사" },
+                { time: "13:50", activity: "목포역 도착", desc: "기차 탑승 준비 및 짐 정리" },
+                { time: "14:19", activity: "서울행 KTX 탑승", desc: "KTX 1호차 8C, 8D 탑승 후 서울로 출발" }
+            ]
+        };
+
+        function showDay(day) {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = '';
+            
+            // Update tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('tab-active', 'text-gray-600', 'font-bold'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.add('text-gray-400'));
+            document.getElementById(`tab${day}`).classList.add('tab-active');
+            document.getElementById(`tab${day}`).classList.remove('text-gray-400');
+
+            // Render items
+            itineraryData[day].forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = "relative mb-8 transition-all duration-500 opacity-0 transform translate-y-4";
+                div.innerHTML = `
+                    <div class="absolute -left-[42px] w-5 h-5 bg-white border-4 border-[#e67e22] rounded-full z-10"></div>
+                    <div>
+                        <span class="inline-block px-2 py-1 bg-[#e67e22] text-white text-xs font-bold rounded mb-1">${item.time}</span>
+                        <h3 class="text-lg font-bold text-[#2c3e50]">${item.activity}</h3>
+                        <p class="text-sm text-gray-500 mt-1">${item.desc}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+                
+                setTimeout(() => {
+                    div.classList.remove('opacity-0', 'translate-y-4');
+                }, index * 100);
+            });
+        }
+
+        // Initialize Chart
+        function initChart() {
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['식도락 (맛집)', '인문 관광', '휴식/야경', '이동/기타'],
+                    datasets: [{
+                        data: [40, 30, 20, 10],
+                        backgroundColor: [
+                            '#e67e22',
+                            '#3498db',
+                            '#2ecc71',
+                            '#95a5a6'
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: { size: 12 }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // App Start
+        window.onload = () => {
+            showDay(1);
+            initChart();
+        };
+    </script>
+</body>
+</html>
